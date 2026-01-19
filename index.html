@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anna Mei - Physics Ph.D. candidate at Harvard University specializing in high energy theory, conformal field theory, and QFT formalization in Lean.">
+    <meta name="keywords" content="Anna Mei, Harvard Physics, high energy theory, conformal field theory, string theory, Lean theorem prover, QFT, robotics, tactile sensing">
+    <meta name="author" content="Anna Mei">
     <title>Anna Mei | Harvard University</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
             --primary: #2c3e50;
@@ -190,29 +195,32 @@
         <aside class="sidebar">
             <div class="profile-card">
                 <div class="profile-photo">
-                    <span>Photo</span>
+                    <img src="profile_pic.png" alt="Anna Mei" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
 
-                [cite_start]<div class="name">Anna Mei [cite: 1]</div>
+                <div class="name">Anna Mei</div>
                 <div class="title">Ph.D. Candidate in Physics</div>
                 
                 <div class="contact-details">
                     <div class="edu-item">
-                        [cite_start]<span class="edu-school">Harvard University [cite: 2]</span>
-                        [cite_start]<span class="edu-degree">Ph.D. in Physics [cite: 8]</span>
-                        [cite_start]<span class="edu-year">2023 – Present [cite: 11]</span>
+                        <span class="edu-school">Harvard University</span>
+                        <span class="edu-degree">Ph.D. in Physics</span>
+                        <span class="edu-year">2023 – Present</span>
                     </div>
                     <div class="edu-item">
-                        [cite_start]<span class="edu-school">Boston University [cite: 9]</span>
-                        <span class="edu-degree">B.A. [cite_start]Physics & Math [cite: 10]</span>
-                        [cite_start]<span class="edu-year">2019 – 2023 [cite: 12]</span>
+                        <span class="edu-school">Boston University</span>
+                        <span class="edu-degree">B.A. Physics & Math</span>
+                        <span class="edu-year">2019 – 2023</span>
                     </div>
 
                     <div class="contact-item" style="margin-top: 25px;">
-                        [cite_start]📧 <a href="mailto:amei@g.harvard.edu">amei@g.harvard.edu</a> [cite: 2]
+                        📧 <a href="mailto:amei@g.harvard.edu">amei@g.harvard.edu</a>
                     </div>
                     <div class="contact-item">
-                        [cite_start]📍 Cambridge, MA [cite: 2]
+                        📍 Cambridge, MA
+                    </div>
+                    <div class="contact-item">
+                        📚 <a href="https://inspirehep.net/authors/2724145" target="_blank">INSPIRE-HEP</a>
                     </div>
                 </div>
             </div>
@@ -223,13 +231,12 @@
             <section id="about">
                 <h2>About Me</h2>
                 <p>
-                    [cite_start]I am a Ph.D. candidate at Harvard University specializing in high energy theory[cite: 4, 8]. 
-                    My work sits at the intersection of advanced mathematics and physical systems, with a particular interest 
-                    [cite_start]in robotics, control, and mathematical physics[cite: 6].
+                    I am a Physics Ph.D. candidate at Harvard University specializing in high energy theory. My advisor is Xi Yin.
+                    In physics, I've been working on conformal field theory and string theory, and my recent work is on formalization of QFT using Lean.
                 </p>
                 <p>
-                    I enjoy applying convex optimization techniques, such as semidefinite programming, to solve complex physics 
-                    [cite_start]problems[cite: 5]. [cite_start]My background also includes hands-on experience with electronics and FPGA systems[cite: 5].
+                    I'm also actively involved in robotics research, focusing on tactile sensing and imitation learning.
+                    My background also includes hands-on experience with electronics and FPGA systems.
                 </p>
             </section>
 
@@ -239,17 +246,25 @@
                 <div class="project-item">
                     <h3>Tactile Data for Retargeting in Imitation Learning</h3>
                     <p>
-                        This project focuses on improving robotic manipulation. I am researching ways to incorporate tactile data 
-                        [cite_start]from human demonstrations to enhance the retargeting process for robotic grippers[cite: 16]. 
-                        [cite_start]As part of this work, I designed a custom tactile sensing glove to capture high-fidelity contact data[cite: 17].
+                        This project focuses on improving robotic manipulation. I am researching ways to incorporate tactile data
+                        from human demonstrations to enhance the retargeting process for robotic grippers.
+                        As part of this work, I designed a custom tactile sensing glove to capture high-fidelity contact data.
                     </p>
                 </div>
 
                 <div class="project-item">
                     <h3>Formalizing Physics Proofs in Lean</h3>
                     <p>
-                        [cite_start]I am working on formulating Euclidean QFT axioms using the Lean theorem-proving language, assisted by LLMs[cite: 18]. 
-                        My work involves constructing proofs for generalized free fields satisfying the O-S Axioms. 
+                        I am working on formulating Euclidean QFT axioms using the Lean theorem-proving language, assisted by LLMs.
+                        My work involves constructing proofs for generalized free fields satisfying the O-S Axioms.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Anomalous Dimension For Multi-trace Operators in \(\mathcal{N}=4\) SYM</h3>
+                    <p>
+                        The project aims to compute tree-level anomalous dimensions of multi-trace operators in \(\mathcal{N}=4\) Super Yang–Mills theory using a Hamiltonian perturbation approach. 
+                        This approach is intended to simplify calculations, clarify multi-trace operator mixing, and provide a more transparent understanding of the large-N spectrum beyond current correlator-based limits.
                     </p>
                 </div>
             </section>
@@ -262,7 +277,7 @@
                     <a href="https://doi.org/10.1007/JHEP03(2024)154" style="color:var(--accent); text-decoration:none;">
                         "LSZ in Action: Extracting Form Factors from Correlators Nonperturbatively in 2d Theory"
                     </a><br>
-                    [cite_start]<em>JHEP</em> 03, 154 (2024). [cite: 28]
+                    <em>JHEP</em> 03, 154 (2024).
                 </p>
             </section>
 
