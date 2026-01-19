@@ -3,145 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna Mei | Ph.D. Candidate in Physics</title>
+    <title>Anna Mei | Harvard University</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #2980b9;
-            --text-color: #333;
-            --light-text: #666;
-            --bg-color: #fff;
-            --section-bg: #f9f9f9;
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #444;
+            --text-light: #666;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            line-height: 1.6;
         }
 
+        /* Layout Container */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 40px auto;
+            display: flex;
+            flex-wrap: wrap; /* Wraps on mobile */
+            gap: 40px;
             padding: 20px;
         }
 
-        /* Header */
-        header {
+        /* Left Sidebar (Profile) */
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
             text-align: center;
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
         }
 
-        h1 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 2.5em;
+        .profile-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: sticky; /* Keeps it visible while scrolling on desktop */
+            top: 20px;
         }
 
-        .subtitle {
-            font-size: 1.2em;
-            color: var(--light-text);
-            margin-top: 10px;
+        /* Profile Picture Placeholder */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            background-color: #e2e8f0; /* Gray placeholder color */
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Remove this 'span' block once you add a real image */
+        .profile-photo span {
+            color: #94a3b8;
+            font-size: 0.9em;
         }
 
-        .contact-info {
-            margin-top: 15px;
-            font-size: 0.95em;
+        /* To add your real image, use this HTML inside the .profile-photo div: 
+           <img src="your-photo.jpg" alt="Anna Mei" style="width: 100%; height: 100%; object-fit: cover;"> 
+        */
+
+        .name {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
         }
 
-        .contact-info a {
-            color: var(--accent-color);
+        .title {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            font-size: 0.9em;
+            color: var(--text-light);
+            text-align: left;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: var(--text);
             text-decoration: none;
-            margin: 0 10px;
+            transition: color 0.2s;
         }
 
-        /* Sections */
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Right Content Area */
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
         section {
-            margin: 40px 0;
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            color: var(--primary);
             font-size: 1.5em;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f1f1;
         }
 
-        /* Content Blocks */
-        .entry {
-            margin-bottom: 25px;
-        }
-
-        .entry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-
-        .entry-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: var(--primary-color);
-        }
-
-        .entry-meta {
-            color: var(--light-text);
-            font-size: 0.9em;
-            font-style: italic;
-        }
-
-        .entry-subtitle {
-            font-weight: 600;
-            color: #555;
+        h3 {
+            font-size: 1.2em;
             margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .project-date {
+            font-size: 0.85em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
             display: block;
         }
 
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
+        .project-item {
+            margin-bottom: 30px;
+        }
+        
+        .project-item:last-child {
+            margin-bottom: 0;
         }
 
-        li {
-            margin-bottom: 5px;
-        }
-
-        /* Skills Tags */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-category {
+        /* Education specific styling for sidebar or main */
+        .edu-item {
             margin-bottom: 15px;
-            width: 100%;
         }
-
-        .skill-label {
+        .edu-school {
             font-weight: bold;
-            margin-right: 10px;
+            display: block;
+            color: var(--primary);
+        }
+        .edu-degree {
+            display: block;
+            font-size: 0.95em;
+        }
+        .edu-year {
+            font-size: 0.85em;
+            color: #888;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            color: var(--light-text);
-            margin-top: 50px;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 600px) {
-            .entry-header {
+        @media (max-width: 768px) {
+            .container {
                 flex-direction: column;
+            }
+            .profile-card {
+                position: static;
             }
         }
     </style>
@@ -149,135 +186,87 @@
 <body>
 
     <div class="container">
-        <header>
-            <h1>Anna Mei</h1>
-            <div class="subtitle">Ph.D. Candidate in Physics at Harvard University</div>
-            <div class="contact-info">
-                <a href="mailto:amei@g.harvard.edu">amei@g.harvard.edu</a> •
-                <span>(617) 838-0750</span>
-            </div>
-            <div class="contact-info">
-                17 Oxford Street, Cambridge, MA 02138
-            </div>
-        </header>
+        
+        <aside class="sidebar">
+            <div class="profile-card">
+                <div class="profile-photo">
+                    <span>Photo</span>
+                </div>
 
-        <section id="about">
-            <h2>About</h2>
-            <p>
-                I am a Ph.D. candidate in Physics with a strong foundation in theoretical and computational physics and advanced mathematics. 
-                I possess hands-on experience in electronics, FPGA/Microcontroller, and robotics systems. My research interests include robotics, 
-                control, and mathematical physics, with a focus on applying convex optimization (e.g., semidefinite programming) to physics problems.
-            </p>
-        </section>
+                [cite_start]<div class="name">Anna Mei [cite: 1]</div>
+                <div class="title">Ph.D. Candidate in Physics</div>
+                
+                <div class="contact-details">
+                    <div class="edu-item">
+                        [cite_start]<span class="edu-school">Harvard University [cite: 2]</span>
+                        [cite_start]<span class="edu-degree">Ph.D. in Physics [cite: 8]</span>
+                        [cite_start]<span class="edu-year">2023 – Present [cite: 11]</span>
+                    </div>
+                    <div class="edu-item">
+                        [cite_start]<span class="edu-school">Boston University [cite: 9]</span>
+                        <span class="edu-degree">B.A. [cite_start]Physics & Math [cite: 10]</span>
+                        [cite_start]<span class="edu-year">2019 – 2023 [cite: 12]</span>
+                    </div>
 
-        <section id="education">
-            <h2>Education</h2>
+                    <div class="contact-item" style="margin-top: 25px;">
+                        [cite_start]📧 <a href="mailto:amei@g.harvard.edu">amei@g.harvard.edu</a> [cite: 2]
+                    </div>
+                    <div class="contact-item">
+                        [cite_start]📍 Cambridge, MA [cite: 2]
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
             
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Harvard University</span>
-                    <span class="entry-meta">Sep 2023 – Present</span>
-                </div>
-                <span class="entry-subtitle">Ph.D. in Physics</span>
-                <div>Advisor: Xi Yin</div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Boston University</span>
-                    <span class="entry-meta">Aug 2019 – May 2023</span>
-                </div>
-                <span class="entry-subtitle">B.A. in Physics and B.A. in Mathematics (Summa Cum Laude)</span>
-                <div>Advisor: A. Liam Fitzpatrick</div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Selected Projects</h2>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Tactile Data in Imitation Learning</span>
-                    <span class="entry-meta">Nov 2025 – Present</span>
-                </div>
-                <ul>
-                    <li>Research aiming to incorporate tactile data from human demonstrations to improve the retargeting process for robotic grippers in imitation learning.</li>
-                    <li>Designed a tactile sensing glove to capture contact data in human manipulation demonstrations.</li>
-                </ul>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Formalizing Physics Proofs through Lean</span>
-                    <span class="entry-meta">Nov 2025 – Present</span>
-                </div>
-                <ul>
-                    <li>Formulating Euclidean QFT axioms in Lean (Theorem Proving Language) with the assistance of LLMs.</li>
-                    <li>Constructing proofs of a generalized free field satisfying the O-S Axioms.</li>
-                    <li>Identified a major inconsistency in axiom definitions and reconstructed the proof after correction.</li>
-                </ul>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">FM Radio Emitter & Receiver</span>
-                    <span class="entry-meta">Oct 2025</span>
-                </div>
-                <ul>
-                    <li>Built an analog FM transmitter and receiver as a class project.</li>
-                    <li>Tuned oscillators, filters, and amplifiers to achieve clean audio transmission.</li>
-                </ul>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">3D Ising Model Bootstrap</span>
-                    <span class="entry-meta">Dec 2023</span>
-                </div>
-                <ul>
-                    <li>Applied semidefinite programming (SDPB) to the conformal bootstrap to explore the allowed "island" region of the 3D Ising model.</li>
-                    <li>Implemented robust numerical optimization pipelines to study bounds on conformal data.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Publications</h2>
-            <div class="entry">
+            <section id="about">
+                <h2>About Me</h2>
                 <p>
-                    A. L. Fitzpatrick and <strong>Z. Mei</strong>, "LSZ in Action: Extracting Form Factors from Correlators Nonperturbatively in 2d Theory," 
-                    <em>JHEP</em> 03, 154 (2024). doi:10.1007/JHEP03(2024)154
+                    [cite_start]I am a Ph.D. candidate at Harvard University specializing in high energy theory[cite: 4, 8]. 
+                    My work sits at the intersection of advanced mathematics and physical systems, with a particular interest 
+                    [cite_start]in robotics, control, and mathematical physics[cite: 6].
                 </p>
-            </div>
-        </section>
+                <p>
+                    I enjoy applying convex optimization techniques, such as semidefinite programming, to solve complex physics 
+                    [cite_start]problems[cite: 5]. [cite_start]My background also includes hands-on experience with electronics and FPGA systems[cite: 5].
+                </p>
+            </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skill-category">
-                <span class="skill-label">Programming:</span> Mathematica, Python, Lean, C/C++, ROS
-            </div>
-            <div class="skill-category">
-                <span class="skill-label">Hardware:</span> FPGA, Microcontroller, Analog/Digital Electronics
-            </div>
-            <div class="skill-category">
-                <span class="skill-label">Mathematics:</span> Topology, Differential Geometry, Algebra, PDEs, Group Theory
-            </div>
-            <div class="skill-category">
-                <span class="skill-label">Languages:</span> English (fluent), Mandarin (native), Cantonese (native)
-            </div>
-        </section>
+            <section id="research">
+                <h2>Current Research</h2>
+                
+                <div class="project-item">
+                    <h3>Tactile Data for Retargeting in Imitation Learning</h3>
+                    <p>
+                        This project focuses on improving robotic manipulation. I am researching ways to incorporate tactile data 
+                        [cite_start]from human demonstrations to enhance the retargeting process for robotic grippers[cite: 16]. 
+                        [cite_start]As part of this work, I designed a custom tactile sensing glove to capture high-fidelity contact data[cite: 17].
+                    </p>
+                </div>
 
-        <section id="awards">
-            <h2>Awards</h2>
-            <ul>
-                <li><strong>Faculty Award for Excellence</strong>, Boston University Physics Department (2023)</li>
-                <li><strong>UROP Award</strong>, Boston University (Summer 2020)</li>
-            </ul>
-        </section>
+                <div class="project-item">
+                    <h3>Formalizing Physics Proofs in Lean</h3>
+                    <p>
+                        [cite_start]I am working on formulating Euclidean QFT axioms using the Lean theorem-proving language, assisted by LLMs[cite: 18]. 
+                        My work involves constructing proofs for generalized free fields satisfying the O-S Axioms. 
+                    </p>
+                </div>
+            </section>
 
-        <footer>
-            <p>&copy; 2026 Anna Mei. Hosted on GitHub Pages.</p>
-        </footer>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <p>
+                    <strong>A. L. Fitzpatrick and Z. Mei</strong>.<br> 
+                    <a href="https://doi.org/10.1007/JHEP03(2024)154" style="color:var(--accent); text-decoration:none;">
+                        "LSZ in Action: Extracting Form Factors from Correlators Nonperturbatively in 2d Theory"
+                    </a><br>
+                    [cite_start]<em>JHEP</em> 03, 154 (2024). [cite: 28]
+                </p>
+            </section>
+
+        </main>
     </div>
 
 </body>
